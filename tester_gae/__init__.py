@@ -1,12 +1,25 @@
 """
 Module for GAE specific test stuff
 """
+import os
+import sys
 import unittest
 
-from google.appengine.ext import testbed
-from google.appengine.datastore import datastore_stub_util
-# from google.appengine.api import apiproxy_stub_map
-# from google.appengine.api.search import simple_search_stub
+
+def path_setup():
+    """
+    appengine libraries path
+    """
+    app_engine = os.environ["APP_ENGINE_DIR"]
+    sys.path.insert(1, app_engine)
+    sys.path.insert(1, os.path.join(app_engine, 'lib', 'yaml', 'lib'))
+    import dev_appserver
+    dev_appserver.fix_sys_path()
+
+
+path_setup()
+from google.appengine.ext import testbed  # noqa: F401 pylint: disable=wrong-import-position
+from google.appengine.datastore import datastore_stub_util  # noqa: F401 pylint: disable=wrong-import-position
 
 
 class TestGae(unittest.TestCase):
