@@ -1,12 +1,20 @@
 import setuptools
 
 
-with open("README.md", "r") as fhandle:
-    long_description = fhandle.read()
+long_description = """
+# test.helper.gae
+
+Class for autotests GoogleAppEngine platform python apps
+
+GAE Cloud SDK must be installed: https://cloud.google.com/sdk/
+
+`gcloud components install app-engine-python`
+
+"""
 
 setuptools.setup(
     name = 'tester_gae',
-    version = '1.0',
+    version = '1.0.1',
     author = 'Vitaly Bogomolov',
     author_email = 'mail@vitaly-bogomolov.ru',
     description = 'Class for autotests GoogleAppEngine platform python apps',
