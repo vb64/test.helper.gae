@@ -34,17 +34,19 @@ coverage:
 html:
 	$(COVERAGE) html --skip-covered
 
-upload_piptest: tests
-	$(PYTHON) setup.py sdist upload -r pypitest
+dist:
+	$(PYTHON) setup.py sdist bdist_wheel
 
-upload_pip: tests
-	$(PYTHON) setup.py sdist upload -r pypi
+upload_piptest: tests dist
+	$(PYTHON) -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+upload_pip: tests dist
+	$(PYTHON) -m twine upload dist/*
 
 setup: setup_python setup_pip
 
 setup_pip:
 	$(PYTHON) -m pip install -r requirements.txt
-	$(PYTHON) -m pip install -r $(TEST)/requirements.txt
 
 setup_python:
 	$(PYTHON_BIN) -m virtualenv ./venv

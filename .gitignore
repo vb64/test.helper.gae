@@ -3,3 +3,6 @@
 .coverage
 htmlcov/*
 venv*
+build/*
+dist/*
+tester_gae.egg-info/*
