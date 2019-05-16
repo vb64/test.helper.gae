@@ -1,8 +1,6 @@
 """
 Module for GAE specific test stuff
 """
-import os
-import sys
 import unittest
 
 
@@ -14,12 +12,6 @@ def path_setup():
     """
     appengine libraries path
     """
-    app_engine = os.environ["APP_ENGINE_DIR"]
-    if not app_engine:
-        raise Exception('Environment variable APP_ENGINE_DIR not set.')
-
-    sys.path.insert(1, app_engine)
-    sys.path.insert(1, os.path.join(app_engine, 'lib', 'yaml', 'lib'))
     import dev_appserver
     dev_appserver.fix_sys_path()
 
