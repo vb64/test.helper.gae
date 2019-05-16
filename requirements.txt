@@ -1,6 +1,6 @@
 Pillow
 gae_installer
-urllib3==1.24.1
+urllib3==1.24.2
 twine
 tester_coverage
 flake8
