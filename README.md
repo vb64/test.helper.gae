@@ -12,7 +12,18 @@ $ pip install tester-gae
 
 ```python
 
+from google.appengine.ext import ndb
+from google.appengine.api.taskqueue import Queue, Task
+
 from tester_gae import TestGae
+
+
+class TestTable(ndb.Model):
+    """
+    GAE datatsore table
+    """
+    date = ndb.DateTimeProperty(auto_now_add=True)
+
 
 class TestGaeApp(TestGae):
     """
@@ -25,8 +36,6 @@ class TestGaeApp(TestGae):
         """
         check db table items count
         """
-        from main import TestTable
-
         self.check_db_tables([
           (TestTable, 0),
         ])
@@ -42,8 +51,6 @@ class TestGaeApp(TestGae):
         """
         check for number of tasks in queue
         """
-        from google.appengine.api.taskqueue import Queue, Task
-
         self.queue = Queue('default')
         self.queue.add(Task('xxx', url='/'))
 
