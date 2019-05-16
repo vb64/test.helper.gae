@@ -9,7 +9,7 @@ Class for autotests GoogleAppEngine python apps
 
 setuptools.setup(
     name = 'tester_gae',
-    version = '1.3.1',
+    version = '1.3.0',
     author = 'Vitaly Bogomolov',
     author_email = 'mail@vitaly-bogomolov.ru',
     description = 'Class for autotests GoogleAppEngine python apps',
