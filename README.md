@@ -5,7 +5,7 @@
 
 ## Install
 ```
-$ pip install tester_gae
+$ pip install tester-gae
 ```
 
 ## Usage in tests
