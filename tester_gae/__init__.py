@@ -23,7 +23,7 @@ class TestGae(unittest.TestCase):
     """
     Init GAE stuff for local testing
     """
-    def setUp(  # pylint: disable=arguments-differ,too-many-arguments,too-many-locals,too-many-branches
+    def setUp(
       self,
       project_dir,
       datastore=True,
@@ -41,7 +41,7 @@ class TestGae(unittest.TestCase):
       logservice=True,
       xmpp=True,
       search=True
-    ):
+    ):  # pylint: disable=arguments-differ,too-many-arguments,too-many-locals,too-many-branches
         """
         https://cloud.google.com/appengine/docs/python/refdocs/google.appengine.ext.testbed
         """
