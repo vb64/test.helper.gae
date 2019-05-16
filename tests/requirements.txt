@@ -1,0 +1,5 @@
+tester_coverage
+flake8
+pylint
+coverage
+coveralls

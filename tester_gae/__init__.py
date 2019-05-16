@@ -1,8 +1,6 @@
 """
 Module for GAE specific test stuff
 """
-import os
-import sys
 import unittest
 
 
@@ -14,12 +12,6 @@ def path_setup():
     """
     appengine libraries path
     """
-    app_engine = os.environ["APP_ENGINE_DIR"]
-    if not app_engine:
-        raise Exception('Environment variable APP_ENGINE_DIR not set.')
-
-    sys.path.insert(1, app_engine)
-    sys.path.insert(1, os.path.join(app_engine, 'lib', 'yaml', 'lib'))
     import dev_appserver
     dev_appserver.fix_sys_path()
 
@@ -31,7 +23,7 @@ class TestGae(unittest.TestCase):
     """
     Init GAE stuff for local testing
     """
-    def setUp(  # pylint: disable=arguments-differ,too-many-arguments,too-many-locals,too-many-branches
+    def setUp(
       self,
       project_dir,
       datastore=True,
@@ -49,7 +41,7 @@ class TestGae(unittest.TestCase):
       logservice=True,
       xmpp=True,
       search=True
-    ):
+    ):  # pylint: disable=arguments-differ,too-many-arguments,too-many-locals,too-many-branches
         """
         https://cloud.google.com/appengine/docs/python/refdocs/google.appengine.ext.testbed
         """
