@@ -6,3 +6,5 @@ flake8
 pylint
 pytest
 pytest-cov
+coverage
+codacy-coverage
