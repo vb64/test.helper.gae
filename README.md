@@ -4,7 +4,7 @@
 
 ## Install
 ```bash
-$ pip install tester-gae
+pip install tester-gae
 ```
 
 ## Usage in tests
