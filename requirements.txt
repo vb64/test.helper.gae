@@ -2,8 +2,9 @@ Pillow
 gae_installer
 urllib3==1.24.2
 twine
-tester_coverage
 flake8
 pylint
+pytest
+pytest-cov
 coverage
-coveralls
+codacy-coverage

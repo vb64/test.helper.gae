@@ -1,7 +1,6 @@
 # Class for autotests GoogleAppEngine python apps
-[![Python 2.7](https://img.shields.io/travis/vb64/test.helper.gae.svg?label=Python%202.7&style=plastic)](https://travis-ci.org/vb64/test.helper.gae)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability-percentage/vb64/test.helper.gae.svg?label=Code%20Climate&style=plastic)](https://codeclimate.com/github/vb64/test.helper.gae)
-[![Coverage Status](https://coveralls.io/repos/github/vb64/test.helper.gae/badge.svg?branch=master)](https://coveralls.io/github/vb64/test.helper.gae?branch=master)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vb64/test.helper.gae/test.helper.gae%20tests?label=Python%202.7&style=plastic)](https://github.com/vb64/test.helper.gae/actions?query=workflow%3A%22test.helper.gae+tests%22)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/17fdd38a1f2f487bb1d50124f6f99b93)](https://www.codacy.com/manual/vb64/test.helper.gae?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vb64/test.helper.gae&amp;utm_campaign=Badge_Grade)
 
 ## Install
 ```
