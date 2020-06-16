@@ -1,11 +1,9 @@
 name: test.helper.gae tests
 
-on:
-  release:
-    types: [created]
+on: [push]
 
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
