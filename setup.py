@@ -12,7 +12,7 @@ setuptools.setup(
     version = '1.4.0',
     author = 'Vitaly Bogomolov',
     author_email = 'mail@vitaly-bogomolov.ru',
-    description = 'Class for autotests GoogleAppEngine python apps',
+    description = 'Class for autotests GoogleAppEngine Standard Environment Python2.7 apps',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url = 'https://github.com/vb64/test.helper.gae',
