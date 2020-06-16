@@ -135,31 +135,20 @@ class TestGae(unittest.TestCase):
 
         for table, count in db_state:
             i = len(table.query().fetch(300, keys_only=True))
-            self.assertEqual(
+            assert i == count, "{} items: {} must be {}".format(
+              table._get_kind(),  # pylint: disable=protected-access
               i,
-              count,
-              "{} items: {} must be {}".format(
-                table._get_kind(),  # pylint: disable=protected-access
-                i,
-                count
-              )
+              count
             )
 
     def assert_tasks_num(self, tasks_number, queue_name='default'):
         """
         check task count for given GAE taskqueue
         """
-        if not self.taskqueue_stub:
-            raise Exception('init_taskqueue_stub not install.')
-
-        tasks = self.taskqueue_stub.GetTasks(queue_name)
+        tasks = self.gae_tasks(queue_name=queue_name, flush_queue=False)
         count = len(tasks)
-        self.assertEqual(
-          count,
-          tasks_number,
-          "task count: %d (must be %d) %s" % (
-            count, tasks_number, [task['url'] for task in tasks]
-          )
+        assert count == tasks_number, "task count: %d (must be %d) %s" % (
+          count, tasks_number, [task['url'] for task in tasks]
         )
 
     def gae_tasks(self, queue_name='default', flush_queue=True):
