@@ -1,6 +1,7 @@
-# Class for autotests GoogleAppEngine python apps
+# Class for autotests GoogleAppEngine Standard Environment Python2.7 apps
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vb64/test.helper.gae/test.helper.gae%20tests?label=Python%202.7&style=plastic)](https://github.com/vb64/test.helper.gae/actions?query=workflow%3A%22test.helper.gae+tests%22)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/17fdd38a1f2f487bb1d50124f6f99b93)](https://www.codacy.com/manual/vb64/test.helper.gae?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vb64/test.helper.gae&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/17fdd38a1f2f487bb1d50124f6f99b93)](https://www.codacy.com/manual/vb64/test.helper.gae?utm_source=github.com&utm_medium=referral&utm_content=vb64/test.helper.gae&utm_campaign=Badge_Coverage)
 
 ## Install
 ```bash
