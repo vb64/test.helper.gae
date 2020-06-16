@@ -3,7 +3,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/17fdd38a1f2f487bb1d50124f6f99b93)](https://www.codacy.com/manual/vb64/test.helper.gae?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vb64/test.helper.gae&amp;utm_campaign=Badge_Grade)
 
 ## Install
-```
+```bash
 $ pip install tester-gae
 ```
 
