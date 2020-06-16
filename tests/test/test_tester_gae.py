@@ -23,7 +23,7 @@ class TestSetup(TestGae):
         from main import TestTable
         item = TestTable()
         item.put()
-        self.assertTrue(item)
+        assert item
 
     def test_args(self):
         """
@@ -55,6 +55,18 @@ class TestSetup(TestGae):
         with self.assertRaises(AssertionError):
             item.put()
 
+        with self.assertRaises(Exception) as context:
+            self.reread(None)
+        assert 'init_datastore_v3_stub not install' in str(context.exception)
+
+        with self.assertRaises(Exception) as context:
+            self.check_db_tables(None)
+        assert 'init_datastore_v3_stub not install' in str(context.exception)
+
+        with self.assertRaises(Exception) as context:
+            self.gae_tasks()
+        assert 'init_taskqueue_stub not install' in str(context.exception)
+
 
 class TestDatastore(TestGae):
     """
@@ -72,7 +84,7 @@ class TestDatastore(TestGae):
         bypass memcash read
         """
         item1 = self.reread(self.item.key)
-        self.assertEqual(self.item.key, item1.key)
+        assert self.item.key == item1.key
 
     def test_check_db_tables(self):
         """
@@ -102,9 +114,9 @@ class TestTaskQueue(TestGae):
         self.assert_tasks_num(1)
         tasks = self.gae_tasks(queue_name='default', flush_queue=False)
 
-        self.assertEqual(len(tasks), 1)
+        assert len(tasks) == 1
         self.assert_tasks_num(1)
 
         tasks = self.gae_tasks(queue_name='default', flush_queue=True)
-        self.assertEqual(len(tasks), 1)
+        assert len(tasks) == 1
         self.assert_tasks_num(0)
